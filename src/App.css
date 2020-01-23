@@ -1,0 +1,11 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.buttons{
+    width: 25em;
+    margin: 5em 15em;
+}
