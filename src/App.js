@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './App.css'
+import { Main, ActionButton, InitiativeTable } from './styles';
 
 export default function App() {
   const [characters, setCharacters] = useState([]);
@@ -35,8 +35,8 @@ export default function App() {
   }
 
   return (
-    <body>
-      <table>
+    <Main>
+      <InitiativeTable>
 
         <thead>
           <tr className='header'>
@@ -60,7 +60,7 @@ export default function App() {
         </tbody>
 
         <tfoot>
-        <tr>
+          <tr>
             <td><input type="text" value={newCharacter.name} placeholder="name" onChange={e => setNewCharacter({ ...newCharacter, name: e.target.value})}/></td>
             <td><input type="text" value={newCharacter.init} placeholder="init" onChange={e => setNewCharacter({ ...newCharacter, init: e.target.value})}/></td>
             <td><input type="text" value={newCharacter.ac} placeholder="ac" onChange={e => setNewCharacter({ ...newCharacter, ac: e.target.value})}/></td>
@@ -68,14 +68,14 @@ export default function App() {
           </tr>
         </tfoot>
 
-      </table>
+      </InitiativeTable>
      
       <div>
-        <button className='buttons' type='button' onClick={() => SortCharactersByInit(characters)}>Sort</button>
-        <button className='buttons'>clear all</button>
+        <ActionButton type='button' onClick={() => SortCharactersByInit(characters)}>Sort</ActionButton>
+        <ActionButton>save</ActionButton>
       </div>
 
-    </body>
+    </Main>
   );
 }
 
