@@ -53,7 +53,7 @@ export default function App() {
               <td>{character.init}</td>
               <td>{character.ac}</td>
               <td>
-                <button onClick={() => RemoveCharacter(character.id)} >remove</button>
+                <button onClick={() => RemoveCharacter(character.id)} >X</button>
               </td>
             </tr>
           ))}
@@ -72,6 +72,7 @@ export default function App() {
      
       <div>
         <ActionButton type='button' onClick={() => SortCharactersByInit(characters)}>Sort</ActionButton>
+        <ActionButton>save</ActionButton>
         <ActionButton>save</ActionButton>
       </div>
 
