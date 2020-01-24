@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/initiative_tracker/static/js/main.9b1dbe34.chunk.js",
-    "main.js.map": "/initiative_tracker/static/js/main.9b1dbe34.chunk.js.map",
+    "main.js": "/initiative_tracker/static/js/main.f7389e14.chunk.js",
+    "main.js.map": "/initiative_tracker/static/js/main.f7389e14.chunk.js.map",
     "runtime-main.js": "/initiative_tracker/static/js/runtime-main.90b1cdf3.js",
     "runtime-main.js.map": "/initiative_tracker/static/js/runtime-main.90b1cdf3.js.map",
     "static/js/2.32724a56.chunk.js": "/initiative_tracker/static/js/2.32724a56.chunk.js",
     "static/js/2.32724a56.chunk.js.map": "/initiative_tracker/static/js/2.32724a56.chunk.js.map",
     "index.html": "/initiative_tracker/index.html",
-    "precache-manifest.d9b67f0ae1ff8cedda815e475e2c0799.js": "/initiative_tracker/precache-manifest.d9b67f0ae1ff8cedda815e475e2c0799.js",
+    "precache-manifest.237a9948bc7610532596c48526752464.js": "/initiative_tracker/precache-manifest.237a9948bc7610532596c48526752464.js",
     "service-worker.js": "/initiative_tracker/service-worker.js",
     "static/js/2.32724a56.chunk.js.LICENSE": "/initiative_tracker/static/js/2.32724a56.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.90b1cdf3.js",
     "static/js/2.32724a56.chunk.js",
-    "static/js/main.9b1dbe34.chunk.js"
+    "static/js/main.f7389e14.chunk.js"
   ]
 }
