@@ -34,7 +34,7 @@ export const InitiativeTable = styled.table`
     }
 
     tfoot>tr>td>input {
-        width: 80%;
+        width: 100%;
         padding: 2%;
         border-radius: 0;
     }

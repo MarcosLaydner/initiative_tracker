@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
 import { Main, ActionButton, InitiativeTable } from './styles';
+import Character from './components/Character'
 
 export default function App() {
   const [characters, setCharacters] = useState([]);
   const [newCharacter, setNewCharacter] = useState('');
   const [idList, setIdList] = useState([]);  
 
-  function RemoveCharacter (id) {
+  function removeCharacter (id) {
     const arrayCopy = characters.filter((row) => row.id !== id);
     setCharacters(arrayCopy);
+    console.log(id)
   }
   
   function handleAdd () {
@@ -19,14 +21,14 @@ export default function App() {
   function SortCharactersByInit (characters) {
     const arrayCopy = characters.slice(0);
     arrayCopy.sort((a,b) => b.init - a.init);
-    setCharacters(arrayCopy)
+    setCharacters(arrayCopy);
   }
 
   function generateId() {
-    let id = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)
+    let id = Math.floor(Math.random() * 1000)
 
     while (idList.includes(id)) {
-      id = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)
+      id = Math.floor(Math.random() * 1000)
     }
 
     idList.push(id)
@@ -48,14 +50,8 @@ export default function App() {
 
         <tbody>
         {characters.map(character => (
-            <tr key={character.id} className='contents'>
-              <td>{character.name}</td>
-              <td>{character.init}</td>
-              <td>{character.ac}</td>
-              <td>
-                <button onClick={() => RemoveCharacter(character.id)} >X</button>
-              </td>
-            </tr>
+              <Character id={generateId} name={character.name} init={character.init} ac={character.ac}
+              removeFunction ={removeCharacter}/>
           ))}
         </tbody>
 
@@ -79,4 +75,3 @@ export default function App() {
     </Main>
   );
 }
-
