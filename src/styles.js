@@ -9,6 +9,8 @@ export const Main = styled.body`
 
 export const InitiativeTable = styled.table`
 
+    border-spacing: 0;
+
     thead>tr>th {
         background-color: black;
         color: white;
@@ -25,7 +27,7 @@ export const InitiativeTable = styled.table`
     }
 
     tbody>tr>td {
-        padding: 0.5%;
+        padding: 0.5% 1%;
     }
 
     tfoot>tr>td {
@@ -33,9 +35,9 @@ export const InitiativeTable = styled.table`
         width: 30%;
     }
 
-    tfoot>tr>td>input {
+    input {
         width: 100%;
-        padding: 2%;
+        padding: 2% 0;
         border-radius: 0;
     }
 
@@ -44,6 +46,10 @@ export const InitiativeTable = styled.table`
         color: white;
         width: 100%;
         padding: 10%
+    }
+
+    tfoot {
+        background-color: #ccc;
     }
 `;
 

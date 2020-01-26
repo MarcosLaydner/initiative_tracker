@@ -51,7 +51,8 @@ export default function App() {
         <tbody>
         {characters.map(character => (
               <Character id={generateId} name={character.name} init={character.init} ac={character.ac}
-              removeFunction ={removeCharacter}/>
+              removeFunction ={removeCharacter}
+              updateFunction ={0}/>
           ))}
         </tbody>
 
