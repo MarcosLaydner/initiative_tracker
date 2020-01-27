@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import "../styles"
 
 export default props => {
@@ -7,6 +7,12 @@ export default props => {
     let [name, setName] = useState(props.name)
     let [init, setInit] = useState(props.init)
     let [ac, setAc] = useState(props.ac)
+
+    useEffect(() => {
+       props.updateFunction({name: name, init: init, ac: ac, id: id})
+
+    }, [props,name, init, ac, id])
+
 
     return (
 

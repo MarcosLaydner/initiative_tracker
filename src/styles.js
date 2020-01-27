@@ -54,9 +54,9 @@ export const InitiativeTable = styled.table`
 `;
 
 export const ActionButton = styled.button`
-    width: 25%;
-    padding: 1%;
+    width: 100%;
+    padding: 3%;
     background-color: black;
     color: white;
-    font-size: 75%;
+    font-size: 100%;
 `;

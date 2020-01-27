@@ -36,6 +36,11 @@ export default function App() {
     return id;
   }
 
+  function updateCharacter(update) {
+    
+    console.log(characters)
+  }
+
   return (
     <Main>
       <InitiativeTable>
@@ -43,7 +48,7 @@ export default function App() {
         <thead>
           <tr className='header'>
             <th>Name</th>
-            <th>Init</th>
+            <th>Initiative</th>
             <th>AC</th>
           </tr>
         </thead>
@@ -52,7 +57,8 @@ export default function App() {
         {characters.map(character => (
               <Character id={generateId} name={character.name} init={character.init} ac={character.ac}
               removeFunction ={removeCharacter}
-              updateFunction ={0}/>
+              updateFunction ={updateCharacter}
+              this = {character}/>
           ))}
         </tbody>
 
@@ -63,16 +69,14 @@ export default function App() {
             <td><input type="text" value={newCharacter.ac} placeholder="ac" onChange={e => setNewCharacter({ ...newCharacter, ac: e.target.value})}/></td>
             <td><button type='button' onClick={handleAdd}>Add</button></td>
           </tr>
+          <tr>
+            <th><ActionButton type='button' onClick={() => SortCharactersByInit(characters)}>Sort</ActionButton></th>
+            <th><ActionButton>Start</ActionButton></th>
+            <th><ActionButton>Save</ActionButton></th>
+          </tr>
         </tfoot>
 
       </InitiativeTable>
-     
-      <div>
-        <ActionButton type='button' onClick={() => SortCharactersByInit(characters)}>Sort</ActionButton>
-        <ActionButton>save</ActionButton>
-        <ActionButton>save</ActionButton>
-      </div>
-
     </Main>
   );
 }
