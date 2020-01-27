@@ -10,17 +10,25 @@ export default function App() {
   function removeCharacter (id) {
     const arrayCopy = characters.filter((row) => row.id !== id);
     setCharacters(arrayCopy);
-    console.log(id)
   }
   
   function handleAdd () {
-    setCharacters([...characters, newCharacter])
-    setNewCharacter({name: '', init: '', ac: '', id: generateId()})
+    const id = generateId();
+    const add = { id: id, 
+      char: <Character id={id} name={newCharacter.name} init={newCharacter.init} ac={newCharacter.ac}
+      removeFunction ={removeCharacter}
+      updateFunction ={updateCharacter}
+      />}
+    characters.push(add) // quando eu uso 'setCharacters[...characters, add]' a primeira não é adcionada na lista
+    setCharacters(characters)
+    setNewCharacter({name: '', init: '', ac: ''})
+    console.log(characters)
   }
 
   function SortCharactersByInit (characters) {
     const arrayCopy = characters.slice(0);
-    arrayCopy.sort((a,b) => b.init - a.init);
+    arrayCopy.sort((a,b) => b.char.props.init - a.char.props.init);
+    console.log(arrayCopy[0].char.props)
     setCharacters(arrayCopy);
   }
 
@@ -31,14 +39,13 @@ export default function App() {
       id = Math.floor(Math.random() * 1000)
     }
 
-    idList.push(id)
+    idList.push(id) // quando eu uso 'setIdList[...idList, id]', da um erro dizendo que .includes não é um método
     setIdList(idList)
     return id;
   }
 
   function updateCharacter(update) {
     
-    console.log(characters)
   }
 
   return (
@@ -55,10 +62,7 @@ export default function App() {
 
         <tbody>
         {characters.map(character => (
-              <Character id={character.id} name={character.name} init={character.init} ac={character.ac}
-              removeFunction ={removeCharacter}
-              updateFunction ={updateCharacter}
-              this = {character}/>
+              character.char
           ))}
         </tbody>
 
